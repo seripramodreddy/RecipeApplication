@@ -12,7 +12,7 @@ const InputBox = (props) => (
 const Box = (props) => (
   <div
     style={{
-      backgroundColor: props.color ? props.color : "yellow",
+      backgroundColor: props.color ? props.color : "grey",
       height: "20px",
       width: "200px",
       margin: "auto",
