@@ -13,7 +13,7 @@ const Box = (props) => (
   <div
     style={{
       backgroundColor: props.color ? props.color : "grey",
-      height: "20px",
+      height: "15px",
       width: "200px",
       margin: "auto",
       marginRight: "50px"
