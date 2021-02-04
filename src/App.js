@@ -1,37 +1,41 @@
 import React, { useState } from "react";
+//import Recipe from "./Recipe";
 import "./styles.css";
 
-let InGredients = () => (
-  <div>
-    <ul>
-      <li>Cornflour</li>
-      <li>Oil</li>
-      <li>Potato</li>
-    </ul>
-  </div>
+const InputBox = (props) => (
+  <input
+    placeHolder="add recipe name"
+    onChange={(event) => props.setRecipe(event.target.value)}
+  />
 );
 
+const Box = (props) => (
+  <div class="container">
+    <img src={props.recipe}></img>
+    <li>{props.recipes}</li>
+    <button>AddIngredients</button>
+  </div>
+);
 export default function App() {
-  const [like, setLike] = useState(20);
-  const [dislike, setDislike] = useState(65);
+  const [recipe, setRecipe] = useState("");
+  const [recipes, setRecipes] = useState([""]);
 
   return (
-    <div className="App">
-      <h1>Samosa Recipe</h1>
+    <div className="text-center bg-dark">
+      <div className="container">
+        <InputBox recipe={recipe} setRecipe={setRecipe} />
 
-      <button onClick={() => setLike(like + 1)}>👍 {like}</button>
-      <button onClick={() => setDislike(dislike - 1)}>👎 {dislike}</button>
-      <button onClick={() => setDislike(dislike - 1)}>
-        dislikecount {dislike}
-      </button>
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStcvbr-MHz7WaDXx41azS3wcOPcq9xzp_hiw&usqp=CAU"
-        alt="samosa"
-      ></img>
-      <br />
-      <button>Ingredients</button>
-      <p>{{ InGredients }}</p>
-      <button>Preparation</button>
+        <button
+          onClick={() => {
+            setRecipes([...recipes, recipe]);
+          }}
+        >
+          Add Recipe
+        </button>
+        {recipes.map((element) => (
+          <Box recipe={element} />
+        ))}
+      </div>
     </div>
   );
 }
