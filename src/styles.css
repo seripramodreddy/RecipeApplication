@@ -2,13 +2,7 @@
   font-family: sans-serif;
   text-align: center;
 }
-.container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+
 .img1 {
   height: 100px;
   width: 100px;
