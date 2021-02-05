@@ -4,16 +4,28 @@
 }
 
 .img1 {
-  height: 100px;
-  width: 100px;
-}
-.flex-box {
-  width: 200px;
   height: 200px;
-  background-color: aqua;
-  text-align: center;
-  margin: 10px;
+  width: 200px;
 }
-.small {
-  background-color: aquamarine;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  background-color: burlywood;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+}
+.end {
+  background-color: lightseagreen;
+  color: white;
+  text-align: center;
+}
+.start {
+  text-align: center;
+  background-color: black;
+  color: white;
 }
